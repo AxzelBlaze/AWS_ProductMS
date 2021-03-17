@@ -7,7 +7,8 @@ public class Validator {
 
 
 	public static Boolean validateName(String name){
-		if((name.length() <= 100) && !name.matches("[ ]*") && name.matches("([A-Za-z])+(\\s[A-Za-z]+)*")) {
+		String regex = "^[a-zA-z]+([\\s][a-zA-Z]+)*$";
+		if((name.length() <= 100) && name.matches(regex)) {
 			return true;
 		}
 		return false;
